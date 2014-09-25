@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		27180AE019D3E1C500B02501 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27180ADF19D3E1C500B02501 /* main.m */; };
 		27180AE319D3E1C500B02501 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27180AE219D3E1C500B02501 /* AppDelegate.m */; };
-		27180AE619D3E1C500B02501 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27180AE519D3E1C500B02501 /* ViewController.m */; };
-		27180AE919D3E1C500B02501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27180AE719D3E1C500B02501 /* Main.storyboard */; };
 		27180AEB19D3E1C500B02501 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27180AEA19D3E1C500B02501 /* Images.xcassets */; };
-		27180AEE19D3E1C500B02501 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27180AEC19D3E1C500B02501 /* LaunchScreen.xib */; };
 		27180AFA19D3E1C500B02501 /* TwiiiwTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27180AF919D3E1C500B02501 /* TwiiiwTTests.m */; };
+		27180B0619D3E23C00B02501 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 27180B0519D3E23C00B02501 /* TwitterClient.m */; };
+		52F4CE1B28654C81A1D09D26 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F48AD578BD4950A7C2073E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +26,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24CE809247D846D88E3A7593 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		27180ADA19D3E1C500B02501 /* TwiiiwT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwiiiwT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27180ADE19D3E1C500B02501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27180ADF19D3E1C500B02501 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27180AE119D3E1C500B02501 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27180AE219D3E1C500B02501 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		27180AE419D3E1C500B02501 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		27180AE519D3E1C500B02501 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		27180AE819D3E1C500B02501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27180AEA19D3E1C500B02501 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27180AED19D3E1C500B02501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		27180AF319D3E1C500B02501 /* TwiiiwTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiiiwTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27180AF819D3E1C500B02501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27180AF919D3E1C500B02501 /* TwiiiwTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwiiiwTTests.m; sourceTree = "<group>"; };
+		27180B0419D3E23C00B02501 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
+		27180B0519D3E23C00B02501 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		99F48AD578BD4950A7C2073E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F4CE1B28654C81A1D09D26 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +66,8 @@
 				27180ADC19D3E1C500B02501 /* TwiiiwT */,
 				27180AF619D3E1C500B02501 /* TwiiiwTTests */,
 				27180ADB19D3E1C500B02501 /* Products */,
+				24CE809247D846D88E3A7593 /* Pods.xcconfig */,
+				CAFF3040893A437DA9A4C0EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +83,10 @@
 		27180ADC19D3E1C500B02501 /* TwiiiwT */ = {
 			isa = PBXGroup;
 			children = (
+				27180B0319D3E22500B02501 /* Model */,
 				27180AE119D3E1C500B02501 /* AppDelegate.h */,
 				27180AE219D3E1C500B02501 /* AppDelegate.m */,
-				27180AE419D3E1C500B02501 /* ViewController.h */,
-				27180AE519D3E1C500B02501 /* ViewController.m */,
-				27180AE719D3E1C500B02501 /* Main.storyboard */,
 				27180AEA19D3E1C500B02501 /* Images.xcassets */,
-				27180AEC19D3E1C500B02501 /* LaunchScreen.xib */,
 				27180ADD19D3E1C500B02501 /* Supporting Files */,
 			);
 			path = TwiiiwT;
@@ -119,6 +118,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		27180B0319D3E22500B02501 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27180B0419D3E23C00B02501 /* TwitterClient.h */,
+				27180B0519D3E23C00B02501 /* TwitterClient.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CAFF3040893A437DA9A4C0EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F48AD578BD4950A7C2073E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27180AFD19D3E1C500B02501 /* Build configuration list for PBXNativeTarget "TwiiiwT" */;
 			buildPhases = (
+				E40B5DAAFD3149F090C4B3CF /* Check Pods Manifest.lock */,
 				27180AD619D3E1C500B02501 /* Sources */,
 				27180AD719D3E1C500B02501 /* Frameworks */,
 				27180AD819D3E1C500B02501 /* Resources */,
+				3E6041B50AAA4FEB9E0482BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,8 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27180AE919D3E1C500B02501 /* Main.storyboard in Resources */,
-				27180AEE19D3E1C500B02501 /* LaunchScreen.xib in Resources */,
 				27180AEB19D3E1C500B02501 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,13 +230,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E6041B50AAA4FEB9E0482BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E40B5DAAFD3149F090C4B3CF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27180AD619D3E1C500B02501 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27180AE619D3E1C500B02501 /* ViewController.m in Sources */,
 				27180AE319D3E1C500B02501 /* AppDelegate.m in Sources */,
+				27180B0619D3E23C00B02501 /* TwitterClient.m in Sources */,
 				27180AE019D3E1C500B02501 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,25 +291,6 @@
 			targetProxy = 27180AF419D3E1C500B02501 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		27180AE719D3E1C500B02501 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27180AE819D3E1C500B02501 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		27180AEC19D3E1C500B02501 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27180AED19D3E1C500B02501 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		27180AFB19D3E1C500B02501 /* Debug */ = {
@@ -341,9 +371,11 @@
 		};
 		27180AFE19D3E1C500B02501 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24CE809247D846D88E3A7593 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwiiiwT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,9 +383,11 @@
 		};
 		27180AFF19D3E1C500B02501 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24CE809247D846D88E3A7593 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwiiiwT/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +446,7 @@
 				27180AFF19D3E1C500B02501 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27180B0019D3E1C500B02501 /* Build configuration list for PBXNativeTarget "TwiiiwTTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +455,7 @@
 				27180B0219D3E1C500B02501 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
