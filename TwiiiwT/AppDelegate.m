@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "TimelineViewController.h"
+#import "TwitterClient.h"
+#import "User.h"
+#import "NSURL+verifyOauth.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    self.window.rootViewController = lvc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -40,6 +49,25 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    if ([url.scheme isEqualToString:@"twiiiwt"]) {
+        if ([url.host isEqualToString:@"oauth"]) {
+            if ([url verifyOauth]) {
+                [[TwitterClient instance] finishLogin:url.query withCompletion:^{
+                    TimelineViewController *tvc = [[TimelineViewController alloc] init];
+                    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+                    [self.window setRootViewController:nvc];
+                }];
+            }
+        }
+        return YES;
+    }
+    return NO;
 }
 
 @end

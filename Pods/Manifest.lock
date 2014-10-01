@@ -23,6 +23,7 @@ PODS:
   - BDBOAuth1Manager (1.4.0):
     - AFNetworking/NSURLConnection (~> 2.4.0)
     - AFNetworking/NSURLSession (~> 2.4.0)
+  - DateTools (1.4.3)
   - HexColors (2.2.1)
   - pop (1.0.6)
   - TSMessages (0.9.10):
@@ -31,12 +32,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
   - BDBOAuth1Manager
+  - DateTools
   - pop (~> 1.0)
   - TSMessages
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   BDBOAuth1Manager: 4f0967110286edd4c7961cf48a4eb242c64137a1
+  DateTools: 7c2d233ea2d4bda3a717d0cd5f58da926a5998d0
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   pop: e518794da38942c05255eb64b36d894e70cb4f00
   TSMessages: 8598a0645e9d54847f6e5f3b070bef39c493bbf8
