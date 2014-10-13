@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "TimelineViewController.h"
+#import "MainViewController.h"
 #import "User.h"
 #import "TwitterClient.h"
 #import <pop/POP.h>
@@ -48,9 +49,9 @@
         [User verifyCurrentUserWithSuccess:^{
             NSLog(@"Login success");
             self.loginSuccess = YES;
-            TimelineViewController *tvc = [[TimelineViewController alloc] init];
-            UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
-            [self presentViewController:nvc animated:YES completion:nil];
+            MainViewController *mvc = [[MainViewController alloc] init];
+            //UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
+            [self presentViewController:mvc animated:YES completion:nil];
         }failure:^(NSError *error) {
             self.loginButton.hidden = NO;
         }];

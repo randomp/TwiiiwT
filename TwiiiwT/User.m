@@ -71,6 +71,7 @@ static User *_currentuser;
         self.bannerImageUrl = (NSString *) dict[userBannerImageURL];
         self.screenName = (NSString *) dict[userScreenName];
         self.place = (NSString *) dict[userLocation];
+        self.introduction = (NSString *) dict[userDescription];
         self.followingCount = (int) dict[userFollowingCount];
         self.followersCount = (int) dict[userFollowerCount];
         self.statusesCount = (int) dict[userStatusesCount];

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *bannerImageUrl;
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, strong) NSString *place;
+@property (nonatomic, strong) NSString *introduction;
 @property (assign) int followingCount;
 @property (assign) int followersCount;
 @property (assign) int statusesCount;

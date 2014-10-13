@@ -20,6 +20,7 @@ FOUNDATION_EXPORT NSString * const userFollowingCount;
 FOUNDATION_EXPORT NSString * const userFollowerCount;
 FOUNDATION_EXPORT NSString * const userStatusesCount;
 FOUNDATION_EXPORT NSString * const userLocation;
+FOUNDATION_EXPORT NSString * const userDescription;
 
 #pragma mark = Fields for Tweet
 FOUNDATION_EXPORT NSString * const tweetText;

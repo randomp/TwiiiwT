@@ -42,6 +42,11 @@ install_resource()
   esac
 }
 install_resource "DateTools/DateTools/DateTools.bundle"
+install_resource "GPUImage/framework/Resources/lookup.png"
+install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
+install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
+install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
+install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
 install_resource "TSMessages/Pod/Assets/NotificationBackgroundError.png"
 install_resource "TSMessages/Pod/Assets/NotificationBackgroundError@2x.png"
 install_resource "TSMessages/Pod/Assets/NotificationBackgroundErrorIcon.png"

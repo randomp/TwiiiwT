@@ -13,8 +13,6 @@
 @interface TweetCell()
 
 @property (weak, nonatomic) IBOutlet UIView *retweetView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *screennameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -26,7 +24,9 @@
 @end
 
 @implementation TweetCell
+
 @synthesize textLabel;
+@synthesize profileImageView;
 
 - (void)awakeFromNib {
     // Initialization code

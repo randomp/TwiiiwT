@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ComposeViewController.h"
 
+typedef enum {
+    timelineView,
+    mentionsView
+} ViewMode;
+
 @interface TimelineViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, NewTweetDelegate>
+
+@property ViewMode mode;
+-(id)initWithMode:(ViewMode)aMode;
 
 @end

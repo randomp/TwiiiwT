@@ -5,3 +5,4 @@ pod 'BDBOAuth1Manager'
 pod "TSMessages"
 pod 'pop', '~> 1.0'
 pod 'DateTools'
+pod 'GPUImage', '~> 0.1.4'

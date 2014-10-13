@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StatsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTm-z5-jue">
+                        <rect key="frame" x="8" y="8" width="24" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-UL-vKC">
+                        <rect key="frame" x="148" y="8" width="24" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-CT-pMN">
+                        <rect key="frame" x="288" y="8" width="24" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWEETS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="042-xX-FMA">
+                        <rect key="frame" x="8" y="33" width="49" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.48298429510000002" green="0.57604220009999996" blue="0.69654815049999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOLLOWING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-8W-4ZX">
+                        <rect key="frame" x="124" y="33" width="72.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.48298429510000002" green="0.57604220009999996" blue="0.69654815049999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOLLOWERS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-u0-3h0">
+                        <rect key="frame" x="237" y="33" width="75" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.48298429510000002" green="0.57604220009999996" blue="0.69654815049999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="042-xX-FMA" firstAttribute="top" secondItem="ZTm-z5-jue" secondAttribute="bottom" constant="8" id="BjC-P4-apg"/>
+                    <constraint firstItem="042-xX-FMA" firstAttribute="top" secondItem="ZTm-z5-jue" secondAttribute="bottom" constant="8" id="CKT-eU-hXl"/>
+                    <constraint firstItem="QuA-UL-vKC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CYn-Yh-37v"/>
+                    <constraint firstItem="ZTm-z5-jue" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Cm1-af-qso"/>
+                    <constraint firstItem="t9m-CT-pMN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Gfa-NC-orq"/>
+                    <constraint firstItem="hyO-u0-3h0" firstAttribute="top" secondItem="t9m-CT-pMN" secondAttribute="bottom" constant="8" id="Hgc-hi-SFV"/>
+                    <constraint firstItem="X3D-8W-4ZX" firstAttribute="top" secondItem="QuA-UL-vKC" secondAttribute="bottom" constant="8" id="JZZ-4c-7Mx"/>
+                    <constraint firstAttribute="centerX" secondItem="QuA-UL-vKC" secondAttribute="centerX" id="Mpk-S5-6Td"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hyO-u0-3h0" secondAttribute="trailing" id="Xab-9G-QwP"/>
+                    <constraint firstAttribute="centerX" secondItem="X3D-8W-4ZX" secondAttribute="centerX" id="ZVw-5b-gh3"/>
+                    <constraint firstItem="042-xX-FMA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="a3c-wX-WEW"/>
+                    <constraint firstItem="ZTm-z5-jue" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jQ6-qB-6OZ"/>
+                    <constraint firstItem="t9m-CT-pMN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pAK-Nb-cWl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="followersCountLabel" destination="t9m-CT-pMN" id="KvA-2k-20c"/>
+                <outlet property="followingCountLabel" destination="QuA-UL-vKC" id="iWz-40-7km"/>
+                <outlet property="tweetsCountLabel" destination="ZTm-z5-jue" id="Fcr-bR-hn8"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="154"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

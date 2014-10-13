@@ -8,6 +8,7 @@
 
 #import "TweetViewController.h"
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 #import "TwitterClient.h"
 #import "Utils.h"
 #import "User.h"
@@ -51,6 +52,8 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     // TODO: cache this
     [Utils loadImageUrl:[self.tweet author].profileImageUrl inImageView:self.profileImageView withAnimation:YES];
+    UITapGestureRecognizer *tapOnUserImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnUserImage:)];
+    [self.profileImageView addGestureRecognizer:tapOnUserImage];
     self.nameLabel.text = [self.tweet author].name;
     self.screennameLabel.text = [NSString stringWithFormat:@"@%@",[self.tweet author].screenName];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -165,5 +168,10 @@
     }
 }
 
+- (void)tapOnUserImage:(UITapGestureRecognizer *)tapGestureRecognizer {
+    ProfileViewController *pvc = [[ProfileViewController alloc] init];
+    pvc.user = self.tweet.user;
+    [self.navigationController pushViewController:pvc animated:YES];
+}
 
 @end

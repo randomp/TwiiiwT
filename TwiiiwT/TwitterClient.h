@@ -24,4 +24,10 @@
 - (AFHTTPRequestOperation *)favoriteWithId:(NSNumber *)tweetId success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure;
 - (AFHTTPRequestOperation *)removeFavoriteWithId:(NSNumber *)tweetId success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure;
 - (AFHTTPRequestOperation *)updateWithStatus:(NSString *)status success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)timelineWithScreenName:(NSString *)screenName
+                                           success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success
+                                           failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure;
+- (AFHTTPRequestOperation *)mentionsWithParams:(NSDictionary *)params
+                                       success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success
+                                       failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure;
 @end

@@ -109,4 +109,17 @@ NSString const *twitterConsumerSecret = @"3wyNpHA2nasmOeAvFQQy4NKZvUrSBrB1S4alAn
     return [self POST:@"1.1/statuses/update.json" parameters:parameters success:success failure:failure];
 }
 
+- (AFHTTPRequestOperation *)timelineWithScreenName:(NSString *)screenName
+                                           success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success
+                                           failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure {
+    NSDictionary *parameters = @{@"screen_name": screenName};
+    return [self GET:@"1.1/statuses/user_timeline.json" parameters:parameters success:success failure:failure];
+}
+
+- (AFHTTPRequestOperation *)mentionsWithParams:(NSDictionary *)params
+                                       success:(void (^) (AFHTTPRequestOperation *operation, id responseObject))success
+                                       failure:(void (^) (AFHTTPRequestOperation *operation, NSError *error))failure {
+    return [self GET:@"1.1/statuses/mentions_timeline.json" parameters:params success:success failure:failure];
+}
+
 @end

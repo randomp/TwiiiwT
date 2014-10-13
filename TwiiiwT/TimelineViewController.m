@@ -10,6 +10,7 @@
 #import "TweetViewController.h"
 #import "ComposeViewController.h"
 #import "LoginViewController.h"
+#import "ProfileViewController.h"
 #import "TwitterClient.h"
 #import "TweetCell.h"
 #import "Tweet.h"
@@ -60,6 +61,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(id)initWithMode:(ViewMode)aMode {
+    self = [super init];
+    self.mode = aMode;
+    if (self) {
+        self.title = (self.mode == timelineView) ? @"Timeline" : @"Mentions";
+        self.tweets = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (TweetCell *)prototypeCell {
     if (!_prototypeCell) {
         _prototypeCell = [self.tweetTableView dequeueReusableCellWithIdentifier:[TweetCell identifier]];
@@ -73,18 +84,28 @@
 }
 
 - (void)getTweets {
-    [[TwitterClient instance] homeTimelineWithParams:nil success:^(AFHTTPRequestOperation *operation, id response) {
-        self.tweets = [Tweet tweetsWithArray:response];
-        [self.tweetTableView reloadData];
-        /*for (Tweet *tweet in self.tweets) {
-            NSLog(@"tweet user: %@", tweet.user.name);
-            NSLog(@"tweet original user: %@", tweet.originalUser.name);
-            NSLog(@"tweet: %@", tweet.text);
-        }*/
-        NSLog(@"initilize success");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error.description);
-    }];
+    TwitterClient *client = [TwitterClient instance];
+    if (self.mode == timelineView) {
+        [client homeTimelineWithParams:nil success:^(AFHTTPRequestOperation *operation, id response) {
+            self.tweets = [Tweet tweetsWithArray:response];
+            [self.tweetTableView reloadData];
+            /*for (Tweet *tweet in self.tweets) {
+             NSLog(@"tweet user: %@", tweet.user.name);
+             NSLog(@"tweet original user: %@", tweet.originalUser.name);
+             NSLog(@"tweet: %@", tweet.text);
+             }*/
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"error: %@", error.description);
+        }];
+    } else {
+        [client mentionsWithParams:nil success:^(AFHTTPRequestOperation *operation, id response) {
+            self.tweets = [Tweet tweetsWithArray:response];
+            [self.tweetTableView reloadData];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"error: %@", error.description);
+        }];
+    }
+    
 }
 
 #pragma mark - UITableView delegate
@@ -102,6 +123,11 @@
     [cell.replyButton addTarget:self action:@selector(onClickReplyButton:) forControlEvents:UIControlEventTouchDown];
     [cell.retweetButton addTarget:self action:@selector(onClickRetweetButton:) forControlEvents:UIControlEventTouchDown];
     [cell.favoriteButton addTarget:self action:@selector(onClickFavouriteButton:) forControlEvents:UIControlEventTouchDown];
+    
+    UITapGestureRecognizer *tapOnUserImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnUserImage:)];
+    [cell.profileImageView addGestureRecognizer:tapOnUserImage];
+    cell.profileImageView.tag = indexPath.row;
+    
     return cell;
 }
 
@@ -146,6 +172,10 @@
     [User signOut];
     LoginViewController *lvc = [[LoginViewController alloc] init];
     [self presentViewController:lvc animated:YES completion:nil];
+}
+
+- (void)onClickMenuButton {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hamburgerClicked" object:nil];
 }
 
 #pragma mark - Click on buttons
@@ -219,20 +249,29 @@
     }
 }
 
+- (void)tapOnUserImage:(UITapGestureRecognizer *)tapGestureRecognizer {
+    ProfileViewController *pvc = [[ProfileViewController alloc] init];
+    Tweet *tweet = self.tweets[tapGestureRecognizer.view.tag];
+    pvc.user = tweet.user;
+    [self.navigationController pushViewController:pvc animated:YES];
+}
+
 #pragma mark - Set up UI
 - (void)setUpNavigationBar {
+    self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:127.0f/255.0f green:195.0f/255.0f blue:1.0f alpha:1.0f];
-    self.navigationItem.title = @"Home";
-    [self.navigationController.navigationBar
-     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    /*[self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];*/
     
     UIBarButtonItem *composeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"composeIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickComposeButton)];
     
-    //UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
-    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign out" style:UIBarButtonItemStylePlain target:self action:@selector(onClickSignOutButton)];
+    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menuIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
+    //UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign out" style:UIBarButtonItemStylePlain target:self action:@selector(onClickSignOutButton)];
     self.navigationItem.rightBarButtonItem = composeButton;
-    self.navigationItem.leftBarButtonItem = signOutButton;
+    //self.navigationItem.leftBarButtonItem = signOutButton;
+    self.navigationItem.leftBarButtonItem = menuButton;
 }
 
 @end

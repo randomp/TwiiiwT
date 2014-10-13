@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *replyButton;
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 - (void)configureCellWithTweet:(Tweet *)tweet;
 - (void)refreshView:(Tweet *)tweet;

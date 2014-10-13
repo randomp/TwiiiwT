@@ -18,6 +18,7 @@ NSString * const userFollowingCount = @"friends_count";
 NSString * const userFollowerCount = @"followers_count";
 NSString * const userStatusesCount = @"statuses_count";
 NSString * const userLocation = @"location";
+NSString * const userDescription = @"description";
 
 NSString * const tweetText = @"text";
 NSString * const tweetID = @"id";

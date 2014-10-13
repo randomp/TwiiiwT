@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TimelineViewController.h"
+#import "MainViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 #import "NSURL+verifyOauth.h"
@@ -22,6 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *lvc = [[LoginViewController alloc] init];
     self.window.rootViewController = lvc;
@@ -59,9 +61,9 @@
         if ([url.host isEqualToString:@"oauth"]) {
             if ([url verifyOauth]) {
                 [[TwitterClient instance] finishLogin:url.query withCompletion:^{
-                    TimelineViewController *tvc = [[TimelineViewController alloc] init];
-                    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
-                    [self.window setRootViewController:nvc];
+                    MainViewController *mvc = [[MainViewController alloc] init];
+                    //UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
+                    [self.window setRootViewController:mvc];
                 }];
             }
         }
