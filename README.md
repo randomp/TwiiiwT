@@ -23,6 +23,10 @@ Walkthrough of all user stories:
 
 ![Video Walkthrough](TwiiiwT2.gif) 
 
+
+Week 1
+------
+
 Time spent: 15 hours spent in total
 
 Completed user stories:
